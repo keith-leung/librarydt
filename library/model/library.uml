@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Model xmi:id="_cCX0ADMVEe-As_nVsQcBKg" name="library" URI="http://www.mdu.edu/library">
+    <packagedElement xmi:type="uml:Class" xmi:id="_cCX0ATMVEe-As_nVsQcBKg" name="Book">
+      <ownedAttribute xmi:id="_cCX0AjMVEe-As_nVsQcBKg" name="isbn" visibility="public" isOrdered="true" isID="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_cCX0AzMVEe-As_nVsQcBKg" name="name" visibility="public" isOrdered="true" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_cCX0BDMVEe-As_nVsQcBKg" name="author" visibility="public" isOrdered="true" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cCX0BTMVEe-As_nVsQcBKg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_cCX0BjMVEe-As_nVsQcBKg" name="available" visibility="public" isOrdered="true" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_cCX0BzMVEe-As_nVsQcBKg" value="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_cCX0CDMVEe-As_nVsQcBKg" name="Loan">
+      <ownedAttribute xmi:id="_cCX0CTMVEe-As_nVsQcBKg" name="loanDate" visibility="public" isOrdered="true" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_cCX0CjMVEe-As_nVsQcBKg" name="dueDate" visibility="public" isOrdered="true" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_cCX0CzMVEe-As_nVsQcBKg" name="book" type="_cCX0ATMVEe-As_nVsQcBKg" isOrdered="true" isUnique="false" association="_cCX0DTMVEe-As_nVsQcBKg"/>
+      <ownedAttribute xmi:id="_cCX0DDMVEe-As_nVsQcBKg" name="borrower" type="_cCX0DzMVEe-As_nVsQcBKg" isOrdered="true" isUnique="false" association="_cCX0FzMVEe-As_nVsQcBKg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_cCX0DTMVEe-As_nVsQcBKg" memberEnd="_cCX0CzMVEe-As_nVsQcBKg _cCX0DjMVEe-As_nVsQcBKg">
+      <ownedEnd xmi:id="_cCX0DjMVEe-As_nVsQcBKg" type="_cCX0CDMVEe-As_nVsQcBKg" association="_cCX0DTMVEe-As_nVsQcBKg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_cCX0DzMVEe-As_nVsQcBKg" name="Member">
+      <ownedAttribute xmi:id="_cCX0EDMVEe-As_nVsQcBKg" name="loans" type="_cCX0CDMVEe-As_nVsQcBKg" isOrdered="true" association="_cCX0FTMVEe-As_nVsQcBKg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cCX0ETMVEe-As_nVsQcBKg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cCX0EjMVEe-As_nVsQcBKg" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_cCX0EzMVEe-As_nVsQcBKg" name="memberId" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_cCX0FDMVEe-As_nVsQcBKg" name="name" visibility="public" isOrdered="true" isUnique="false">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_cCX0FTMVEe-As_nVsQcBKg" memberEnd="_cCX0EDMVEe-As_nVsQcBKg _cCX0FjMVEe-As_nVsQcBKg">
+      <ownedEnd xmi:id="_cCX0FjMVEe-As_nVsQcBKg" type="_cCX0DzMVEe-As_nVsQcBKg" association="_cCX0FTMVEe-As_nVsQcBKg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_cCX0FzMVEe-As_nVsQcBKg" memberEnd="_cCX0DDMVEe-As_nVsQcBKg _cCX0GDMVEe-As_nVsQcBKg">
+      <ownedEnd xmi:id="_cCX0GDMVEe-As_nVsQcBKg" type="_cCX0CDMVEe-As_nVsQcBKg" association="_cCX0FzMVEe-As_nVsQcBKg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_cCX0GTMVEe-As_nVsQcBKg" name="Library">
+      <ownedAttribute xmi:id="_cCX0GjMVEe-As_nVsQcBKg" name="books" type="_cCX0ATMVEe-As_nVsQcBKg" isOrdered="true" aggregation="composite" association="_cCX0JDMVEe-As_nVsQcBKg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cCX0GzMVEe-As_nVsQcBKg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cCX0HDMVEe-As_nVsQcBKg" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_cCX0HTMVEe-As_nVsQcBKg" name="members" type="_cCX0DzMVEe-As_nVsQcBKg" isOrdered="true" aggregation="composite" association="_cCX0JjMVEe-As_nVsQcBKg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cCX0HjMVEe-As_nVsQcBKg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cCX0HzMVEe-As_nVsQcBKg" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_cCX0IDMVEe-As_nVsQcBKg" name="loans" type="_cCX0CDMVEe-As_nVsQcBKg" isOrdered="true" aggregation="composite" association="_cCX0KDMVEe-As_nVsQcBKg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cCX0ITMVEe-As_nVsQcBKg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cCX0IjMVEe-As_nVsQcBKg" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_cCX0IzMVEe-As_nVsQcBKg" name="name" visibility="public" isOrdered="true" isID="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_cCX0JDMVEe-As_nVsQcBKg" memberEnd="_cCX0GjMVEe-As_nVsQcBKg _cCX0JTMVEe-As_nVsQcBKg">
+      <ownedEnd xmi:id="_cCX0JTMVEe-As_nVsQcBKg" type="_cCX0GTMVEe-As_nVsQcBKg" association="_cCX0JDMVEe-As_nVsQcBKg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_cCX0JjMVEe-As_nVsQcBKg" memberEnd="_cCX0HTMVEe-As_nVsQcBKg _cCX0JzMVEe-As_nVsQcBKg">
+      <ownedEnd xmi:id="_cCX0JzMVEe-As_nVsQcBKg" type="_cCX0GTMVEe-As_nVsQcBKg" association="_cCX0JjMVEe-As_nVsQcBKg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_cCX0KDMVEe-As_nVsQcBKg" memberEnd="_cCX0IDMVEe-As_nVsQcBKg _cCX0KTMVEe-As_nVsQcBKg">
+      <ownedEnd xmi:id="_cCX0KTMVEe-As_nVsQcBKg" type="_cCX0GTMVEe-As_nVsQcBKg" association="_cCX0KDMVEe-As_nVsQcBKg"/>
+    </packagedElement>
+    <profileApplication xmi:id="_cCX0KjMVEe-As_nVsQcBKg">
+      <eAnnotations xmi:id="_cCX0KzMVEe-As_nVsQcBKg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <Ecore:EPackage xmi:id="_cCX0LDMVEe-As_nVsQcBKg" base_Package="_cCX0ADMVEe-As_nVsQcBKg" nsPrefix="ds"/>
+  <Ecore:EClass xmi:id="_cCX0LTMVEe-As_nVsQcBKg" base_Class="_cCX0ATMVEe-As_nVsQcBKg"/>
+  <Ecore:EClass xmi:id="_cCX0LjMVEe-As_nVsQcBKg" base_Class="_cCX0CDMVEe-As_nVsQcBKg"/>
+  <Ecore:EReference xmi:id="_cCX0LzMVEe-As_nVsQcBKg" base_Property="_cCX0CzMVEe-As_nVsQcBKg"/>
+  <Ecore:EReference xmi:id="_cCX0MDMVEe-As_nVsQcBKg" base_Property="_cCX0DDMVEe-As_nVsQcBKg"/>
+  <Ecore:EClass xmi:id="_cCX0MTMVEe-As_nVsQcBKg" base_Class="_cCX0DzMVEe-As_nVsQcBKg"/>
+  <Ecore:EReference xmi:id="_cCX0MjMVEe-As_nVsQcBKg" base_Property="_cCX0EDMVEe-As_nVsQcBKg"/>
+  <Ecore:EClass xmi:id="_cCX0MzMVEe-As_nVsQcBKg" base_Class="_cCX0GTMVEe-As_nVsQcBKg"/>
+  <Ecore:EReference xmi:id="_cCX0NDMVEe-As_nVsQcBKg" base_Property="_cCX0GjMVEe-As_nVsQcBKg"/>
+  <Ecore:EReference xmi:id="_cCX0NTMVEe-As_nVsQcBKg" base_Property="_cCX0HTMVEe-As_nVsQcBKg"/>
+  <Ecore:EReference xmi:id="_cCX0NjMVEe-As_nVsQcBKg" base_Property="_cCX0IDMVEe-As_nVsQcBKg"/>
+</xmi:XMI>

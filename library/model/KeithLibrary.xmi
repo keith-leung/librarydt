@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:Library
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ds="http://www.mdu.edu/library"
+    xsi:schemaLocation="http://www.mdu.edu/library library.ecore"
+    name="Keith's Library">
+  <books isbn="978-0451524935"
+      name="Nineteen Eighty-Four"
+      author="George Orwell"
+      available="false"/>
+  <books isbn="978-0451526342"
+      name="Animal Farm"
+      author="George Orwell"
+      available="false"/>
+  <books isbn="978-7519204204"
+      name="Brave New World"
+      author="Aldous Huxley"/>
+  <members loans="//@loans.1"
+      memberId="1"
+      name="Ann"/>
+  <members loans="//@loans.0"
+      memberId="2"
+      name="Bob"/>
+  <members memberId="3"
+      name="Frank"/>
+  <loans loanDate="2024-06-01T00:00:00.000-0400"
+      dueDate="2024-09-01T00:00:00.000-0400"
+      book="978-0451524935"
+      borrower="//@members.1"/>
+  <loans loanDate="2024-06-12T00:00:00.000-0400"
+      dueDate="2024-09-12T00:00:00.000-0400"
+      book="978-0451526342"
+      borrower="//@members.0"/>
+</ds:Library>

@@ -1,0 +1,72 @@
+module library2java;
+create OUT : JavaMM from IN : LibraryMM;
+
+rule Library2Class {
+  from
+    l : LibraryMM!Library
+  to
+    out : JavaMM!Class (
+      name <- l.name,
+      members <- l.books->collect(b | thisModule.Book2Field(b))
+                ->union(l.members->collect(m | thisModule.Member2Field(m))),
+      methods <- Sequence {thisModule.createAddBookMethod(), thisModule.createAddMemberMethod()}
+    )
+}
+
+lazy rule Book2Field {
+  from
+    b : LibraryMM!Book
+  to
+    javaField : JavaMM!Field (
+      name <- b.title.toLower(),
+      type <- 'Book'
+    )
+}
+
+lazy rule Member2Field {
+  from
+    m : LibraryMM!Member
+  to
+    javaField : JavaMM!Field (
+      name <- m.name.toLower(),
+      type <- 'Member'
+    )
+}
+
+lazy rule createAddBookMethod {
+  to
+    m : JavaMM!Method (
+      name <- 'addBook',
+      returnType <- 'void',
+      parameters <- Sequence {
+        thisModule.createParameter('title', 'String'),
+        thisModule.createParameter('author', 'String'),
+        thisModule.createParameter('isbn', 'String')
+      },
+      body <- 'books.add(new Book(title, author, isbn));'
+    )
+}
+
+lazy rule createAddMemberMethod {
+  to
+    m : JavaMM!Method (
+      name <- 'addMember',
+      returnType <- 'void',
+      parameters <- Sequence {
+        thisModule.createParameter('name', 'String'),
+        thisModule.createParameter('id', 'String')
+      },
+      body <- 'members.add(new Member(name, id));'
+    )
+}
+
+lazy rule createParameter {
+  from
+    name : String,
+    type : String
+  to
+    p : JavaMM!Parameter (
+      name <- name,
+      type <- type
+    )
+}

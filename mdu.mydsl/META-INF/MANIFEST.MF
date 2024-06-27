@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: mdu.mydsl
+Bundle-ManifestVersion: 2
+Bundle-Name: mdu.mydsl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: mdu.mydsl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: library,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.35.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: mdu.mydsl.services,
+ mdu.mydsl.parser.antlr.internal,
+ mdu.mydsl.serializer,
+ mdu.mydsl.scoping,
+ mdu.mydsl.generator,
+ mdu.mydsl.parser.antlr,
+ mdu.mydsl,
+ mdu.mydsl.validation,
+ mdu.mydsl.formatting2
+Import-Package: org.apache.log4j

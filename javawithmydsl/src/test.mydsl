@@ -1,0 +1,43 @@
+Library "Keith' Library" {
+	books {
+		Book "978-0451524935" {
+			 name "Nineteen Eighty-Four"
+			 author "George Orwell"
+			 available false
+		}, 
+		Book "978-0451526342" {
+			 name "Animal Farm"
+			 available false
+		},
+		Book "978-7519204204" {
+			 name "Nineteen Eighty-Four"
+			 author "Aldous Huxley"
+			 available false
+		}
+	}
+	members {
+		Member "Ann" {
+			memberId "1" 
+		},
+		Member "Bob" {
+			memberId "2" 
+		},
+		Member "Frank" {
+			memberId "3"
+		}
+	}
+	loans {
+		Loan {
+			loanDate 2024-03-01
+			dueDate 2024-09-01  
+			book "Nineteen Eighty-Four"
+			borrower Bob
+		},
+		Loan {
+			loanDate 21.03.2024
+			dueDate 21.07.2024
+			book "Animal Farm"
+			borrower Ann
+		}
+	}
+}

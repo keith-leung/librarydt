@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: mdu.mydsl.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: mdu.mydsl.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: mdu.mydsl.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: mdu.mydsl,
+ library,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: mdu.mydsl.ide.contentassist.antlr,
+ mdu.mydsl.ide.contentassist.antlr.internal
